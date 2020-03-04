@@ -17,8 +17,8 @@ Todo.create = (newTodo, result) => {
       return;
     }
 
-    console.log("created todo: ", { id: res.insertId, ...newTodo });
-    result(null, { id: res.insertId, ...newTodo });
+    console.log("created todo: ", { id: res.insertId, newTodo });
+    result(null, { id: res.insertId, newTodo });
   });
 };
 
@@ -58,8 +58,8 @@ Todo.updateById = (todoId, todo, result) => {
         return;
       }
 
-      console.log("updated todo: ", { id: todoId, ...todo });
-      result(null, { id: todoId, ...todo });
+      console.log("updated todo: ", { id: todoId, todo });
+      result(null, { id: todoId, todo });
     }
   );
 };

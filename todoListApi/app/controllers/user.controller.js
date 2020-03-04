@@ -8,15 +8,33 @@ exports.create = (req, res) => {
        }); 
     }
      
-    User.create(todo, (err, data) => {
+    User.create(user, (err, data) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Planet."
+          err.message || "Some error occurred while creating the user."
       });
     else res.send(data);
   });
 };
+
+exports.auth = (req, res) => {
+    if (!req.body) {
+      res.status(400).send({
+        message: "Content can not be empty!"
+       }); 
+    }
+     
+    User.login(todo, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while loggin in."
+      });
+    else res.send(data);
+  });
+};
+
 
 // Retrieve a customer from the database.
 exports.findByUserEmail = (req, res) => {

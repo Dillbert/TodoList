@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Planet."
+          err.message || "Some error occurred."
       });
     else res.send(data);
   });

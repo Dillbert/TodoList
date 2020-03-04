@@ -22,6 +22,19 @@ User.create = (newUser, result) => {
   });
 };
 
+User.login = (newUser, result) => {
+  sql.query(`SELECT * FROM user WHERE email=${newUser.email} AND password=${newUser.password}`, newUser, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    console.log("got user: ");
+    result(null, { res });
+  });
+};
+
 User.findByEmail = (email, result) => {
   sql.query(`SELECT * FROM user WHERE email = ${email}`, (err, res) => {
     if (err) {

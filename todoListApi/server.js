@@ -12,8 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Dylans application." });
-  res.header("Access-Control-Allow-Origin", "*");
-
 });
 require("./app/routes/all.routes.js")(app);
 

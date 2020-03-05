@@ -1,0 +1,4 @@
+	<app-login *ngIf="!user.loggedIn" [user]="user" (userChanged)="setUser($event)"></app-login>
+	<app-list  *ngIf="user.loggedIn" [userId]="user.userId"></app-list>
+
+

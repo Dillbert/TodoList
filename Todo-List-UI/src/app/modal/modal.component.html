@@ -1,0 +1,39 @@
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Create Todo Item</h1>
+    </header>
+    <section id="modal-body">
+      <div class="row pl-20">
+		<div class="col-sm-12">
+			<label>Name</label>
+			<div>
+				<input id="name" name="nane" placeholder="Enter todo name" type="text" [(ngModel)]="todo.todoName" />
+			</div>
+		</div>
+	</div>
+	<div class="row pl-20">
+		<div class="col-sm-12">
+			<label>Description</label>
+			<div>
+				<textarea id="loginEmail" name="email" placeholder="Enter your email" type="text" [(ngModel)]="todo.todoDescription"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="row pl-20">
+		<div class="col-sm-12">
+			<label>Severity</label>
+			<div>
+				<select [(ngModel)]="todo.todoSeverity">
+					<option>low</option>
+					<option>medium</option>
+					<option>high</option>
+				</select>
+			</div>
+		</div>
+	</div>
+    </section>
+    <footer id="modal-footer">
+        <button mat-raised-button id="modal-action-button" (click)="actionFunction()">Create</button>
+        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">Cancel</button>
+    </footer>
+</div>

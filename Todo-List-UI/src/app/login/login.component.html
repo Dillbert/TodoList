@@ -1,0 +1,25 @@
+<form>
+	<div class="row pl-20">
+		<div class="col-sm-12">
+			<label>Email</label>
+			<div>
+				<input id="loginEmail" name="email" placeholder="Enter your email" type="text" [(ngModel)]="user.email" />
+			</div>
+		</div>
+	</div>
+	<div class="row pl-20">
+		<div class="col-sm-12">
+			<label>Password</label>
+			<div>
+				<input id="loginEmail" name="email" placeholder="Enter your password" type="password" [(ngModel)]="user.password" />
+			</div>
+		</div>
+		<div class="p-20">
+			<button class="btn btn-primary" (click)="doLogin()"> Login </button>
+		</div>
+	</div>
+
+	<div *ngIf="failedAttempts > 0"class="row pl-20">
+		Failed login number: {{ failedAttempts }}
+	</div>
+</form>

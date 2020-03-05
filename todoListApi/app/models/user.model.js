@@ -31,7 +31,7 @@ User.login = (newUser, result) => {
     }
 
     console.log("got user: ");
-    result(null, { res });
+    result(null,  res[0] );
   });
 };
 

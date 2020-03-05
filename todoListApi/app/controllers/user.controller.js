@@ -8,7 +8,7 @@ exports.create = (req, res) => {
        }); 
     }
      
-    User.create(user, (err, data) => {
+    User.create(new User(req.body), (err, data) => {
     if (err)
       res.status(500).send({
         message:
@@ -25,7 +25,7 @@ exports.auth = (req, res) => {
        }); 
     }
      
-    User.login(todo, (err, data) => {
+    User.login(new User(req.body), (err, data) => {
     if (err)
       res.status(500).send({
         message:

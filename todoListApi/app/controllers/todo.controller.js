@@ -8,7 +8,7 @@ exports.create = (req, res) => {
        }); 
     }
      
-    Todo.create(todo, (err, data) => {
+    Todo.create(new Todo(req.body), (err, data) => {
     if (err)
       res.status(500).send({
         message:

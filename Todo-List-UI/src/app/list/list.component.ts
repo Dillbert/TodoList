@@ -47,7 +47,7 @@ export class ListComponent implements OnInit {
 	    dialogConfig.height = "350px";
 	    dialogConfig.width = "600px";
 	    // https://material.angular.io/components/dialog/overview
-	    const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
-		this.ngOnInit();
+	    const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);		
+		modalDialog.afterClosed();
 	}
 }
